@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## densityPeak project description
 
 
@@ -26,4 +27,9 @@
 >   [(Source)](https://semver.org/)
 
 
+
+=======
+# iceDP
+Identifier of inter-chromatin interaction
+>>>>>>> 52ae0ebe854de37914922b08928e3fd95282f56f
 
