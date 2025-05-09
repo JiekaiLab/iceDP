@@ -1,35 +1,37 @@
-<<<<<<< HEAD
+
 ## densityPeak project description
 
 
 ### Installation
-    pip install iceDP
+way one
+copy to ${python_path}/site-packages
+
+way two
+    pip install iceDP  # not up load yet
 
 ### Import
     import iceDP
 
 ### Usage
+* data processing
+
     x=iceDP.main_procedure.bunchDots()
-    x.readData('/Users/lhlin/ruhai/proj/density_peak/data/chr4_chr11.txt')
+    x.readData('play_data/chr4_chr11_mm10.txt')
     x.get_rho()
     x.get_delta()
     x.do_chi_square_test()
     x.define_border()
     x.horizontal_and_vertical_fold_change()
-    iceDP.main_procedure.save_reult(x, 'chr4_chr11_DPresult')
-* plot
-    iceDP.plot_spots.plot_one_spot(x.data_filted2.values[1], x)
+    iceDP.main_procedure.save_reult(x, 'chr4_chr11_mm10_DPresult')
 
-### version scheme
-> * Increment the MAJOR version when you make incompatible API changes.
-> * Increment the MINOR version when you add functionality in a backwards-compatible manner.
-> * Increment the PATCH version when you make backwards-compatible bug fixes.
->   [(Source)](https://semver.org/)
+* plot
+
+    iceDP.plot_spots.plot_one_spot(x.data_filted2.values[1], x)
 
 
 
 =======
 # iceDP
-Identifier of inter-chromatin interaction
->>>>>>> 52ae0ebe854de37914922b08928e3fd95282f56f
+Identifier of inter-chromatin interaction based on density peak.
+
 
