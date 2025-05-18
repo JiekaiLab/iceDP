@@ -1,14 +1,14 @@
 
-## densityPeak project description
+## iceDP project description
 
 
 ### Installation
-way one
+Way one
 ```shell
 copy to ${python_path}/site-packages
 ```
 
-way two
+Way two
 ```shell
     pip install iceDP  # not up load yet
 ```
@@ -66,8 +66,5 @@ https://github.com/aidenlab/juicertools
 ```
 
 
-=======
-# iceDP
-Identifier of inter-chromatin interaction based on density peak.
 
 
