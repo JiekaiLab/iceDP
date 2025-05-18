@@ -13,22 +13,51 @@ way two
     pip install iceDP  # not up load yet
 ```
 
-### Import
-```python
-    import iceDP
-```
 
 ### Usage
-* data processing
+* data required
+iceDP receive any genome interaction data in a three-column format as input. Before running analyses, we need to prepare genome interaction data in a three-column format:
+
+Column 1 (chr_one_site) → Genomic position on the first chromosome.
+
+Column 2 (chr_two_site) → Genomic position on the second chromosome.
+
+Column 3 (interaction_value) → Interaction strength between the two positions (typically observed in Hi-C experiments).
+
+You can check the sample data using:
+```shell
+head -5 play_data/chr4_chr11_mm10.txt
+3090000 3100000 1.0
+3795000 3100000 1.0
+4205000 3100000 1.0
+4255000 3100000 1.0
+4230000 3105000 1.0
+```
+This file represents genomic interactions between chromosome 4 and chromosome 11 in the mouse genome (mm10).
+
+
+If your data is stored in .hic format, you can extract interaction values using Juicer Tools:
+
+```shell
+java -jar juicer_tools.jar dump observed NONE mydata.hic chr4 chr11 BP 50000 chr4_chr11_mm10.txt
+```
+
+Juicer Tools can be fetch from:
+https://github.com/aidenlab/juicertools
+
+
+
+* iceDP procedure
 ```python
+    import iceDP
     x=iceDP.main_procedure.bunchDots()
     x.readData('play_data/chr4_chr11_mm10.txt')
-    x.get_rho()
-    x.get_delta()
+    x.get_rho()    # calculate rho
+    x.get_delta()  # calculate delta
     x.do_chi_square_test()
     x.define_border()
     x.horizontal_and_vertical_fold_change()
-    iceDP.main_procedure.save_reult(x, 'chr4_chr11_mm10_DPresult')
+    iceDP.main_procedure.save_reult(x, 'chr4_chr11_mm10_DPresult')  # save result
 ```
 
 * plot
