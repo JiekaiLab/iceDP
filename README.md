@@ -15,16 +15,17 @@ Way two
 
 
 ### Usage
-* data required
+* Data required
+
 iceDP receive any genome interaction data in a three-column format as input. Before running analyses, we need to prepare genome interaction data in a three-column format:
 
-Column 1 (chr_one_site) → Genomic position on the first chromosome.
+    Column 1 (chr_one_site) → Genomic position on the first chromosome.
 
-Column 2 (chr_two_site) → Genomic position on the second chromosome.
+    Column 2 (chr_two_site) → Genomic position on the second chromosome.
 
-Column 3 (interaction_value) → Interaction strength between the two positions (typically observed in Hi-C experiments).
+    Column 3 (interaction_value) → Interaction strength between the two positions (typically observed in Hi-C experiments).
 
-You can check the sample data using:
+Check the sample data:
 ```shell
 head -5 play_data/chr4_chr11_mm10.txt
 3090000 3100000 1.0
