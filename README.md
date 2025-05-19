@@ -102,8 +102,5 @@ After processing, iceDP generates a comma-separated 15-column table, filtering o
 ```python
 iceDP.plot_spots.plot_one_spot(x.data_filted2.values[1], x)
 ```
-![plot result ](https://github.com/CreataNameIsHard/iceDP/tree/main/image/bin1_72275000_bin2_101650000.png)
-
-
-
+![plot result ](https://github.com/CreataNameIsHard/iceDP/blob/main/image/bin1_72275000_bin2_101650000.png)
 
