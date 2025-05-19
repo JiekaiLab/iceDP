@@ -3,14 +3,15 @@
 
 
 ### Installation
-Way one
+Use pip to install:
 ```shell
-copy to ${python_path}/site-packages
+pip install iceDP
 ```
 
-Way two
+Or directly copy source code:
 ```shell
-    pip install iceDP  # not up load yet
+# copy to:
+${python_path}/site-packages
 ```
 
 
@@ -51,6 +52,7 @@ https://github.com/aidenlab/juicertools
 * iceDP procedure
 ```python
     import iceDP
+
     x=iceDP.main_procedure.bunchDots()
     x.readData('play_data/chr4_chr11_mm10.txt')
     x.get_rho()    # calculate rho
@@ -65,6 +67,7 @@ https://github.com/aidenlab/juicertools
 ```python
     iceDP.plot_spots.plot_one_spot(x.data_filted2.values[1], x)
 ```
+![plot result ](https://github.com/CreataNameIsHard/iceDP/tree/main/image/bin1_72275000_bin2_101650000.pdf)
 
 
 
