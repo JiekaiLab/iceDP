@@ -1,8 +1,10 @@
 
-## iceDP project description
-  The iceDP package processes genome interaction data using a density peaks algorithm to identify inter-chromatin interactions. Below is the procedure for using iceDP effectively.
+# iceDP project description
+The iceDP package processes genome interaction data using a density peaks algorithm to identify inter-chromatin interactions. Below is the procedure for using iceDP effectively.
 
-### Installation
+<br>
+
+## Installation
 Use pip to install:
 ```shell
 pip install iceDP
@@ -14,11 +16,12 @@ Or directly copy source code:
 ${python_path}/site-packages
 ```
 
+<br>
 
-### Usage
-* Data required
+## Usage
+* **Data required**
 
-  iceDP receive any genome interaction data in a three-column format as input. Before running analyses, we need to prepare genome interaction data in a three-column format:
+iceDP receive any genome interaction data in a three-column format as input. Before running analyses, we need to prepare genome interaction data in a three-column format:
 
     Column 1 (chr_one_site) → Genomic position on the first chromosome.
 
@@ -26,7 +29,7 @@ ${python_path}/site-packages
 
     Column 3 (interaction_value) → Interaction strength between the two positions (typically observed in Hi-C experiments).
 
-Check the sample data:
+ Check the sample data:
 ```shell
 head -5 play_data/chr4_chr11_mm10.txt
 3090000 3100000 1.0
@@ -38,18 +41,15 @@ head -5 play_data/chr4_chr11_mm10.txt
   This file represents genomic interactions between chromosome 4 and chromosome 11 in the mouse genome (mm10).
 
 
-  If your data is stored in .hic format, you can extract interaction values using Juicer Tools:
+  If your data is stored in .hic format, you can extract interaction values using [Juicer Tools](https://github.com/aidenlab/juicertools):
 
 ```shell
-java -jar juicer_tools.jar dump observed NONE mydata.hic chr4 chr11 BP 50000 chr4_chr11_mm10.txt
+java -jar juicer_tools.jar dump observed NONE yourdata.hic chr4 chr11 BP 50000 chr4_chr11_mm10.txt
 ```
 
-  Juicer Tools can be fetch from:
-https://github.com/aidenlab/juicertools
+<br>
 
-
-
-* iceDP procedure
+* **iceDP procedure**
 ```python
 import iceDP
 
@@ -72,7 +72,9 @@ x.horizontal_and_vertical_fold_change()  # Fold change for horizontal and vertic
 iceDP.main_procedure.save_reult(x, 'chr4_chr11_mm10_DPresult')
 ```
 
-* Output format
+<br>
+
+* **Output format**
 
 After processing, iceDP generates a comma-separated 15-column table, filtering out low-confidence interaction spots. Each row in the saved output file (chr4_chr11_mm10_DPresult) contains the following columns:
 
@@ -94,8 +96,9 @@ After processing, iceDP generates a comma-separated 15-column table, filtering o
 | vertical_fc    | Vertical axis fold change                       |
 | horizontal_fc  | Horizontal axis fold change                     |
 
+<br>
 
-* Plot
+* **Plot**
 ```python
 iceDP.plot_spots.plot_one_spot(x.data_filted2.values[1], x)
 ```
